@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, Req } from '@nestjs/
 import { Request } from 'express';
 import { CarsService } from './cars.service';
 import { CreateCarDto } from './dto/create-car.dto';
+import { FilterCarsDto, filterParamsDTO } from './dto/filterCars.dto';
 import { UpdateCarDto } from './dto/update-car.dto';
 
 @Controller('cars')
@@ -16,8 +17,8 @@ export class CarsController {
   }
 
   @Get()
-  async findAll(@Req() request: Request) {
-    const cars: Array<any> = await this.carsService.findAll()
+  async findAll(@Body() request: FilterCarsDto) { 
+    const cars: any = await this.carsService.findAll(request)
     return cars;
   } 
 
