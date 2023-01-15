@@ -4,7 +4,7 @@ export class FilterCarsDto {
     SortOrder: number;
     SortColumn: string;
     FilterApplied: boolean;
-    FilterParams:Array<object>
+    FilterParams:Array<filterParamsDTO>
 }
  
 export class filterParamsDTO
