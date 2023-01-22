@@ -22,10 +22,10 @@ export class CarsController {
     return cars;
   } 
 
-  @Get('/test')
-  async findAlltest(@Body() request: FilterCarsDto) { 
-    //const cars: any = await this.carsService.findAll(request)
-    return "cars";
+  @Post('/filtered')
+  async findFiltered(@Body() request: FilterCarsDto) { 
+    const cars: any = await this.carsService.findAll(request)
+    return cars;
   } 
 
   @Get(':id')
