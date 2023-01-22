@@ -20,7 +20,11 @@ import { CarsModule } from './cars/cars.module';
           password: process.env.DB_PASSWORD,
           database: process.env.DB_NAME,
           entities: [__dirname + '/**/*.entity{.ts,.js}'],
-          synchronize: false
+          synchronize: false,
+          cors: {
+            origin: 'http://localhost:3000',
+            credentials: true,
+          },
         })
       }
     ),
