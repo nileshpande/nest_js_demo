@@ -10,8 +10,8 @@ export type carsFilterUtil =
 
 export type filterParams =
 {
-    FilterColumn: string,
-    FilterText: string, 
+    FilterName: string,
+    FilterValue: string, 
     MatchMode: string
-    // {"ectSetId":"168237766-MQS-2208031201", "SearchInputParameter": {"FilterParams": [,{"FilterColum n":"ectTypId", "FilterText":"-1", "MatchMode" : "NUMERIC_EQUALS"},{"FilterColumn": "ectActionCdId", "FilterText":"-1", "MatchMode" : "NUMERIC_EQUALS"}]}
+    // {"ectSetId":"168237766-MQS-2208031201", "SearchInputParameter": {"FilterParams": [,{"FilterColum n":"ectTypId", "FilterValue":"-1", "MatchMode" : "NUMERIC_EQUALS"},{"FilterName": "ectActionCdId", "FilterValue":"-1", "MatchMode" : "NUMERIC_EQUALS"}]}
 }

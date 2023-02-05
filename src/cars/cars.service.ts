@@ -43,20 +43,20 @@ export class CarsService {
       let tempSQLSTR = "";
       stringSQL = stringSQL + " where ";
       carsFilter.FilterParams.forEach((elementQuery: filterParamsDTO) => {
-        oneQuery[elementQuery.FilterColumn] = elementQuery.FilterText;
+        oneQuery[elementQuery.FilterName] = elementQuery.FilterValue;
         if (elementQuery.MatchMode == "NUMERIC_EQUALS") {
           tempSQLSTR = " = ";
-          stringSQL = stringSQL + elementQuery.FilterColumn + tempSQLSTR + " " + elementQuery.FilterText;
+          stringSQL = stringSQL + elementQuery.FilterName + tempSQLSTR + " " + elementQuery.FilterValue;
           tempSQLSTR = "";
         } 
         if (elementQuery.MatchMode == "STARTSWITH") {
           tempSQLSTR = " = ";
-          stringSQL = stringSQL + elementQuery.FilterColumn  + " LIKE '" + elementQuery.FilterText+"%' ";
+          stringSQL = stringSQL + elementQuery.FilterName  + " LIKE '" + elementQuery.FilterValue+"%' ";
           tempSQLSTR = ""; 
         }
         if (elementQuery.MatchMode == "CONTAINS") {
           tempSQLSTR = " = ";
-          stringSQL = stringSQL + elementQuery.FilterColumn + " LIKE '%" + elementQuery.FilterText+"%' ";
+          stringSQL = stringSQL + elementQuery.FilterName + " LIKE '%" + elementQuery.FilterValue+"%' ";
           tempSQLSTR = "";
         }
       }); 
