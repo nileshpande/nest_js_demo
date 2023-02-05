@@ -48,6 +48,16 @@ export class CarsService {
           tempSQLSTR = " = ";
           stringSQL = stringSQL + elementQuery.FilterColumn + tempSQLSTR + " " + elementQuery.FilterText;
           tempSQLSTR = "";
+        } 
+        if (elementQuery.MatchMode == "STARTSWITH") {
+          tempSQLSTR = " = ";
+          stringSQL = stringSQL + elementQuery.FilterColumn  + " LIKE '" + elementQuery.FilterText+"%' ";
+          tempSQLSTR = ""; 
+        }
+        if (elementQuery.MatchMode == "CONTAINS") {
+          tempSQLSTR = " = ";
+          stringSQL = stringSQL + elementQuery.FilterColumn + " LIKE '%" + elementQuery.FilterText+"%' ";
+          tempSQLSTR = "";
         }
       }); 
     }
